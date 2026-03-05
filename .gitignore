@@ -1,0 +1,19 @@
+# API key
+TFTdata/.env
+
+# Raw data (too large for git)
+TFTdata/data/raw/
+
+# IDE files
+.idea/
+TFTdata/.idea/
+TFTdata/.ipynb_checkpoints/
+TFTdata/.claude/
+*.iml
+
+# Python
+__pycache__/
+
+# System
+.DS_Store
+Thumbs.db
