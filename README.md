@@ -1,6 +1,6 @@
 # TFT Set 16 Meta Analysis — Interactive Data Visualization
 
-**Live Site:** `http://YourUsername.github.io/TFT/frontend/index.html` *(update after deployment)*  
+**Live Site:** `https://github.com/RIleyyu1/TFT/frontend/index.html`  
 **Screencast:** `https://www.youtube.com/watch?v=xxx` *(update after recording)*
 
 ---
@@ -17,46 +17,6 @@ This project provides an interactive visual exploration of the TFT Set 16 compet
 
 ---
 
-## Repository Structure
-
-```
-TFT/
-├── TFTdata/                    # Data collection pipeline & analysis
-│   ├── data/
-│   │   ├── raw/                # Raw match JSON files (1,000 files)
-│   │   ├── processed/          # Cleaned CSVs (see Data section below)
-│   │   └── static_data/        # Data Dragon champion/item/trait mappings
-│   ├── collector.py            # Core API collection logic
-│   ├── config.py               # API key & region configuration
-│   ├── data_processor.py       # JSON → CSV cleaning pipeline
-│   ├── main.py                 # CLI entry point
-│   ├── rate_limiter.py         # Token-bucket rate limiter
-│   ├── tft_eda.ipynb           # Exploratory data analysis notebook
-│   ├── tft_eda_after.ipynb     # EDA with outputs (executed)
-│   ├── requirements.txt        # Python dependencies
-│   └── .env                    # API key (not committed)
-│
-├── frontend/                   # Interactive visualization website
-│   ├── index.html              # Main page
-│   ├── css/
-│   │   └── style.css           # Dark theme styling
-│   ├── js/
-│   │   ├── main.js             # Entry point, data loading
-│   │   ├── networkGraph.js     # View A: champion co-occurrence network
-│   │   ├── traitChart.js       # View B: trait activation bar chart
-│   │   ├── detailPanel.js      # View C: champion detail panel
-│   │   ├── dataProcessor.js    # CSV parsing, co-occurrence computation
-│   │   └── utils.js            # Tooltips, color scales, formatters
-│   └── data/                   # Copy of processed CSVs for frontend
-│       ├── matches.csv
-│       ├── participants.csv
-│       ├── units.csv
-│       └── traits.csv
-│
-├── process_book.pdf            # Process Book
-├── README.md                   # This file
-└── .gitignore
-```
 
 ### What Is Our Code vs. Libraries
 - **Our code:** Everything in `TFTdata/` (Python pipeline + EDA), everything in `frontend/js/` and `frontend/css/`, and `index.html`
@@ -117,12 +77,11 @@ Full EDA is in `TFTdata/tft_eda.ipynb` (with executed outputs in `tft_eda_after.
 | Gunslinger | Nautilus, MissFortune, Lucian, Shyvana | 54.0% | Strong |
 | Soulbound | Wukong, Yunara, Sett, Shen | 51.9% | Above average |
 | Sorcerers | Loris, Seraphine, Braum, Orianna | 48.4% | Below average |
-| Flex | Kennen, Kobuko, Wukong, Volibear | 47.4% | Weak |
-| Loose Swain | Swain, Vi, Neeko (no tight core) | 44.9% | Weakest |
+| Flex | Kennen, Kobuko, Wukong, Volibear | 47.4% |  |
+| Loose Swain | Swain, Vi, Neeko (no tight core) | 44.9% |  |
 
-**Trait structure:** Juggernaut is the most activated trait. Soulbound almost always reaches gold tier — players commit fully. Targon rarely goes beyond bronze — it's just splash.
+**Trait structure:** Juggernaut is the most activated trait. Soulbound almost always reaches gold tier .
 
-These findings directly shaped the visualization: the network graph reveals Swain as a central hub, while the composition selector lets users compare why "Ambessa Carry" (55.7% top-4) massively outperforms "Loose Swain" (44.9%).
 
 ---
 
@@ -163,7 +122,6 @@ The visualization answers our three questions:
 
 1. **Meta structure** is immediately visible — champions cluster by trait synergy in the network, with Swain clearly positioned as the central hub
 2. **Winner predictors** are communicated through node color (green = strong placement), the detail panel (item recommendations, placement distributions), and the correlation insights from EDA
-3. **Not all Swain comps are equal** — the composition selector makes the 10+ percentage point gap between "Ambessa Carry" (55.7% top-4) and "Loose Swain" (44.9%) impossible to miss
 
 ### Limitations and Future Work
 - Data is a snapshot of one patch; a temporal view across patches would reveal meta evolution
@@ -182,4 +140,3 @@ The visualization answers our three questions:
 - d3-force documentation: https://github.com/d3/d3-force
 - RiotWatcher Python library: https://riot-watcher.readthedocs.io/
 - Hextechdocs (community API docs): https://hextechdocs.dev/
-- Course final project template: https://www.dataviscourse.net/2020/project/
