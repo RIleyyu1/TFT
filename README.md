@@ -1,7 +1,7 @@
 # TFT Set 16 Meta Analysis — Interactive Data Visualization
 
 **Live Site:** `https://rileyyu1.github.io/TFT/frontend/index.html`  
-**Screencast:** `https://www.youtube.com/watch?v=xxx` *(update after recording)*
+**Screencast:** `https://www.youtube.com/watch?v=oH5-_vgVwJU` 
 
 ---
 
